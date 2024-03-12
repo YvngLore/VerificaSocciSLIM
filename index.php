@@ -5,11 +5,14 @@ use Slim\Factory\AppFactory;
 
 require __DIR__ . '/vendor/autoload.php';
 
+include_once "Controllers/SiteController.php";
+include_once "Controllers/ImpiantoController.php";
+
 $app = AppFactory::create();
 
-$app->get('/', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("Hello world!");
-    return $response;
-});
+$app->get("/", "SiteController:index");
+$app->get("/impianto", "ImpiantoController:getImpianto");
+
+
 
 $app->run();

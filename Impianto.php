@@ -34,6 +34,10 @@
             $this->longitudine = $longitudine;
         }
 
+        public function toString(){
+            return "Nome: $this->nome <br> Latitudine: $this->latitudine <br> Longitudine: $this->longitudine";  
+        }
+
         public function jsonSerialize(){
             $ritorno = [
                 "nome" => $this->nome,
