@@ -4,8 +4,8 @@
     class RilevatoreDiPressione extends Rilevatore implements JsonSerializable{
         protected $tipologia;
         
-        public function __construct($id, $mis, $um, $sa, $cs, $tip){
-            parent::__construct($id, $mis, $um, $sa, $cs);
+        public function __construct($id, $um, $sa, $cs, $tip){
+            parent::__construct($id, $um, $sa, $cs);
             $this->tipologia = $tip;
         }
 
@@ -21,7 +21,7 @@
             $ritorno = [
                 "identificativo" => parent::getIdentificativo(),
                 "misurazioni" => parent::getMisurazioni(),
-                "unitaMisura" => parent::getUnitaMis(),
+                "unitaMisura" => parent::getUnitaMisura(),
                 "sogliaAllarme" => parent::getSogliaAllarme(),
                 "codiceSeriale" => parent::getCodiceSeriale(),
                 "tipologia" => $this->tipologia

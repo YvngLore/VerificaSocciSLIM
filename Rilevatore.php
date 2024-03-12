@@ -6,12 +6,34 @@
         protected $sogliaAllarme;
         protected $codiceSeriale;
 
-        public function __construct($id, $mis, $um, $sa, $cs){
+        public function __construct($id, $um, $sa, $cs){
             $this->identificativo = $id;
-            $this->misurazioni = $mis;
+            $this->misurazioni = [
+                "01-01-2023" => 3,
+                "10-01-2023" => 5,
+                "05-03-2023" => 9,
+                "13-05-2023" => 10,
+                "15-06-2023" => 21,
+                "18-07-2023" => 25,
+                "19-09-2023" => 19,
+                "19-11-2023" => 20,
+            ];
             $this->unitaMisura = $um;
             $this->sogliaAllarme = $sa;
             $this->codiceSeriale = $cs;
+        }
+
+        public function getMin(){
+            $i = 0;
+            $valori = [];
+
+            foreach($this->misurazioni as $index => $value){
+                if($this->misurazioni[$index] > $value){
+                    $valori[$i] = $this->misurazioni[$index];
+                }
+            }
+
+            return $valori;
         }
 
         public function getIdentificativo(){
@@ -38,8 +60,8 @@
             $this->identificativo = $identificativo;
         }
 
-        public function setMisurazioni($misurazioni){
-            $this->misurazioni = $misurazioni;
+        public function setMisurazioni($date, $value){
+            $this->misurazioni[$date] = $value;
         }
 
         public function setUnitaMisura($unitaMisura){

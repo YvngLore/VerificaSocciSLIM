@@ -4,8 +4,8 @@
     class RilevatoreDiUmidita extends Rilevatore implements JsonSerializable{
         protected $posizione;
         
-        public function __construct($id, $mis, $um, $sa, $cs, $pos){
-            parent::__construct($id, $mis, $um, $sa, $cs);
+        public function __construct($id, $um, $sa, $cs, $pos){
+            parent::__construct($id, $um, $sa, $cs);
             $this->posizione = $pos;
         }
 
