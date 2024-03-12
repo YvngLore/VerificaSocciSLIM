@@ -23,15 +23,15 @@
         }
 
         public function setNome($nome){
-            $this->nome = $nome
+            $this->nome = $nome;
         }
 
         public function setLatitudine($latitudine){
-            $this->latitudine = $latitudine
+            $this->latitudine = $latitudine;
         }
 
         public function setLongitudine($longitudine){
-            $this->longitudine = $longitudine
+            $this->longitudine = $longitudine;
         }
 
         public function jsonSerialize(){
@@ -39,7 +39,7 @@
                 "nome" => $this->nome,
                 "latitudine" => $this->latitudine,
                 "longitudine" => $this->longitudine
-            ]
+            ];
 
             return $ritorno;
         }

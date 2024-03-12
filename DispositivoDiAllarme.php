@@ -17,11 +17,11 @@
         }
 
         public function setNumeroDiTelefono($numero_di_telefono){
-            $this->numero_di_telefono = $numero_di_telefono
+            $this->numero_di_telefono = $numero_di_telefono;
         }
 
         public function setIdentificativo($identificativo){
-            $this->identificativo = $identificativo
+            $this->identificativo = $identificativo;
         }
 
         public function jsonSerialize(){
