@@ -24,11 +24,15 @@
             $this->identificativo = $identificativo;
         }
 
+        public function toString(){
+            return "Identificativo: $this->identificativo <br> Numero di Telefono: $this->numero_di_telefono";
+        }
+
         public function jsonSerialize(){
             $ritorno = [
                 "identificativo" => $this->identificativo,
                 "numero_di_telefono" => $this->numero_di_telefono
-            ]
+            ];
 
             return $ritorno;
         }

@@ -7,7 +7,7 @@
         public function __construct($n, $lat, $long){
             $this->nome = $n;
             $this->latitudine = $lat;
-            $this->longitudine = $long
+            $this->longitudine = $long;
         }
 
         public function getNome(){
